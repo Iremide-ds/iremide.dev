@@ -1,0 +1,101 @@
+# =============================================================================
+# FLUTTER / DART
+# =============================================================================
+
+# Dart tool & pub
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+
+# Flutter-generated
+.flutter-plugins
+.flutter-plugins-dependencies
+**/doc/api/
+/build/
+
+# Flutter web
+/web/flutter_service_worker.js
+/web/flutter.js
+flutter_bootstrap.js
+
+# Last build marker (iOS)
+**/ios/Flutter/.last_build_id
+
+# Generated files
+*.g.dart            
+*.freezed.dart
+*.gr.dart           
+*.config.dart       
+
+# Symbolication & obfuscation
+app.*.symbols
+app.*.map.json
+
+# Coverage
+coverage/
+lcov.info
+
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/local.properties
+/android/.gradle/
+/android/key.properties          # ⚠️ Never commit signing keys
+/android/app/google-services.json # ⚠️ Remove if not using Firebase
+
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*.perspectivev3
+**/ios/**/*.xcworkspace
+!**/ios/**/*.xcworkspace/contents.xcworkspacedata   # Keep workspace data
+**/ios/**/*.xcconfig
+**/ios/**/Flutter/Flutter.podspec
+**/ios/Pods/
+**/ios/.symlinks/
+
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Pods/
+**/macos/.symlinks/
+
+.fvm/flutter_sdk    # Ignore the SDK symlink, not the whole .fvm dir
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code — keep shared launch/task configs, ignore personal settings
+.vscode/settings.json
+.vscode/launch.json
+.vscode/*.code-workspace
+!.vscode/extensions.json   # Keep recommended extensions list for the team
+
+.env
+.env.*
+!.env.example           # Always commit the example template
+*.pem
+*.p12
+*.jks
+google-services.json
+GoogleService-Info.plist
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.class
+*.log
+*.pyc
+*.swp
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages

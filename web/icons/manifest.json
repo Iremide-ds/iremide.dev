@@ -1,0 +1,24 @@
+{
+    "name": "IREMIDE.DEV",
+    "short_name": "IREMIDE",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#02569B",
+    "theme_color": "#02569B",
+    "description": "Iremide's portfolio",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/icons/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png",
+            "density": "0.75"
+        },
+        {
+            "src": "/icons/apple-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "density": "4.0"
+        }
+    ]
+}

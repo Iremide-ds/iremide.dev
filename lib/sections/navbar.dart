@@ -1,3 +1,4 @@
+import 'package:architect_portfolio/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -81,8 +82,7 @@ class _NavbarState extends State<Navbar> {
                         label: 'Projects',
                         isActive: value == 2,
                         onTap: () {
-                          navBarActiveIndex.value = 2;
-                          widget.onProjectsTap();
+                          launchCV();
                         },
                       ),
                       const SizedBox(width: 28),

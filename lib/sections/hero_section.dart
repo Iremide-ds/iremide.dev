@@ -1,4 +1,5 @@
 import 'package:architect_portfolio/sections/navbar.dart';
+import 'package:architect_portfolio/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -191,11 +192,11 @@ class _LeftContent extends StatelessWidget {
                 }),
             const SizedBox(width: 12),
             _OutlineButton(
-                label: 'Contact Me',
-                onTap: () {
-                  navBarActiveIndex.value = 3;
-                  onContactTap();
-                }),
+              label: 'My Resume',
+              onTap: () {
+                launchCV();
+              },
+            ),
           ],
         )
             .animate(delay: 550.ms)

@@ -1,10 +1,17 @@
+import 'package:architect_portfolio/analytics.dart';
+import 'package:architect_portfolio/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 import 'portfolio_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const ArchitectPortfolioApp());
 }
 
@@ -27,6 +34,7 @@ class ArchitectPortfolioApp extends StatelessWidget {
           ThemeData.dark().textTheme,
         ),
       ),
+      navigatorObservers: [AnalyticsService.instance.observer],
       home: const PortfolioPage(),
     );
   }

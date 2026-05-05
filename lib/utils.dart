@@ -2,7 +2,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 Future<void> launchCV() async {
   final uri = Uri.parse(
-    'https://drive.google.com/drive/folders/1Zu6Yz9D4GlvBF-AH6uCyT-nzWYiJaPWR?usp=sharing',
+    'https://drive.google.com/file/d/1GlDuCFxdLPM_q-Xz2ZTKd0lS03XVTUD2/view?usp=sharing',
   );
 
   if (await canLaunchUrl(uri)) {

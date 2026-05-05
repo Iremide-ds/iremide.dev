@@ -82,7 +82,8 @@ class _NavbarState extends State<Navbar> {
                         label: 'Projects',
                         isActive: value == 2,
                         onTap: () {
-                          launchCV();
+                          navBarActiveIndex.value = 2;
+                          widget.onProjectsTap();
                         },
                       ),
                       const SizedBox(width: 28),
@@ -90,13 +91,12 @@ class _NavbarState extends State<Navbar> {
                         label: 'Contact',
                         isActive: value == 3,
                         onTap: () {
-                          navBarActiveIndex.value = 3;
-                          widget.onContactTap();
+                          launchCV();
                         },
                       ),
                       const SizedBox(width: 32),
                     ],
-                    _GetInTouchButton(onTap: widget.onContactTap),
+                    // _GetInTouchButton(onTap: widget.onContactTap),
                   ],
                 );
               }),

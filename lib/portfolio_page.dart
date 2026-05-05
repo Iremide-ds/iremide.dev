@@ -1,7 +1,8 @@
+import 'package:architect_portfolio/analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 import 'app_colors.dart';
-import 'sections/contact_section.dart';
 import 'sections/footer_section.dart';
 import 'sections/hero_section.dart';
 import 'sections/navbar.dart';
@@ -55,14 +56,42 @@ class _PortfolioPageState extends State<PortfolioPage> {
             controller: _scrollController,
             child: Column(
               children: [
-                HeroSection(
+                VisibilityDetector(
                   key: _heroKey,
-                  onProjectsTap: () => _scrollToSection(_worksKey),
-                  onContactTap: () => _scrollToSection(_contactKey),
+                  onVisibilityChanged: (info) {
+                    if (info.visibleFraction > 0.4) {
+                      AnalyticsService.instance
+                          .logSectionViewed('Hero Section');
+                    }
+                  },
+                  child: HeroSection(
+                    onProjectsTap: () => _scrollToSection(_worksKey),
+                    onContactTap: () => _scrollToSection(_contactKey),
+                  ),
                 ),
-                TechStackSection(key: _techKey),
-                SelectedWorksSection(key: _worksKey),
-                ContactSection(key: _contactKey),
+                VisibilityDetector(
+                  key: _techKey,
+                  onVisibilityChanged: (info) {
+                    if (info.visibleFraction > 0.4) {
+                      AnalyticsService.instance
+                          .logSectionViewed('Tech Stack Section');
+                    }
+                  },
+                  child: const TechStackSection(),
+                ),
+                VisibilityDetector(
+                  key: _worksKey,
+                  onVisibilityChanged: (info) {
+                    if (info.visibleFraction > 0.4) {
+                      AnalyticsService.instance
+                          .logSectionViewed('Works Section');
+                    }
+                  },
+                  child: SelectedWorksSection(
+                    key: _worksKey,
+                  ),
+                ),
+                // ContactSection(key: _contactKey,),
                 const FooterSection(),
               ],
             ),
